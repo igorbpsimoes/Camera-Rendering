@@ -1,18 +1,24 @@
-### Projeto de Implementação de Camera Virtual, Sombreamento e Texturização de Objetos e Traçado de Raios
-Primeiro projeto da disciplina Processamento Gráfico(IF680) feito em grupo composto pelos seguintes integrantes:
+### Virtual Camera Implementation, Object Shading and Texturing, and Ray Tracing Project
+First project of the Graphic Processing (IF680) course done in a group composed of the following members:
 * Igor Beltrão Pereira Simões (ibps)
 * Victor Edmond Freire Gaudiot (vefg)
 * Maria Augusta Mota Borba (mamb2)
 * Hugo Soares Ramos Falcão (hsrf)
-### Como executar:
-O projeto foi desenvolvido no Ubuntu e solicita-se que seja executado nele devido a facilidade para utilizar a lib incluída pelo monitor da disciplina. Para executar basta seguir os seguintes passos:
-Compile no terminal:
+
+### Pre-Requisites
+You need to have installed:
+- g++
+- SDL2
+
+### How to run:
+The project was developed on Ubuntu and it is recommended to run it on this OS due to the ease of using the library included by the course monitor. To run it, follow these steps:
+Compile in the terminal:
 ```
 g++ main.cpp ImGUI/imgui_draw.cpp lodepng.cpp ImGUI/imgui_sdl.cpp ImGUI/imgui_widgets.cpp ImGUI/imgui.cpp -g -O3 -w -lSDL2main -lSDL2 -o Renderer.exe
 ```
-Então execute Renderer.exe:
+Then run Renderer.exe:
 ```
 ./Renderer.exe
 ```
 
-O esqueleto do projeto foi desenvolvido pelo monitor da disciplina Ivan Neves Silveira Bandeira de Souza.
+The project skeleton was developed by the course monitor Ivan Neves Silveira Bandeira de Souza.
