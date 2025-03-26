@@ -40,19 +40,19 @@ int main(int argc, char* argv[])
 {
     if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
 
-		SDL_Window* window = SDL_CreateWindow("Projeto PG - Grupo 8", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, SDL_WINDOW_ALLOW_HIGHDPI);
+		SDL_Window* window = SDL_CreateWindow("Camera Render Project", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, SDL_WINDOW_ALLOW_HIGHDPI);
 		SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
         if ( window && renderer ) {
             SDL_bool done = SDL_FALSE;
 			SDL_SetRelativeMouseMode(SDL_FALSE);
-            
+
 			std::vector<Obj> objects;
             objects.push_back( Obj("objects/elf.obj", "objects/Elf_Albedo.png") );
-			
+
 			ImGui::CreateContext();
 			ImGuiSDL::Initialize(renderer, WIDTH, HEIGHT);
-			
+
             camera cam(vec3(0, 0, 3), vec3(0, 0, -1), vec3(0, 1, 0), 90.0f, 1.f, 10000.f, WIDTH, HEIGHT);
 
 			float my_color[4];
@@ -72,9 +72,9 @@ int main(int argc, char* argv[])
 				io.MouseDown[1] = buttons & SDL_BUTTON(SDL_BUTTON_RIGHT);
 
 				ImGui::NewFrame();
-			
+
 				// Criar tela chamada "My First Tool", com barra de menu.
-				ImGui::Begin("My First Tool", &my_tool_active, ImGuiWindowFlags_MenuBar);
+				ImGui::Begin("Tools", &my_tool_active, ImGuiWindowFlags_MenuBar);
 				if (ImGui::BeginMenuBar())
 				{
 					if (ImGui::BeginMenu("File"))
@@ -173,7 +173,7 @@ int main(int argc, char* argv[])
 						else if (event.key.keysym.sym == SDLK_KP_9) {
 							objects[0].rotateYClockwise();
 						}
-						//rotaciona objeto em torno do eixo Z de forma anti-horária 
+						//rotaciona objeto em torno do eixo Z de forma anti-horária
 						else if(event.key.keysym.sym == SDLK_KP_4) {
 							objects[0].rotateZCounterClockwise();
 						}
@@ -267,7 +267,7 @@ int main(int argc, char* argv[])
                     {
                         //If the left mouse button was pressed
                         if( event.button.button == SDL_BUTTON_RIGHT )
-                        { 
+                        {
                         }
 						if( event.button.button == SDL_BUTTON_LEFT)
 						{
@@ -318,7 +318,7 @@ int main(int argc, char* argv[])
                     {
                         //Se o botao esquerdo do mouse nao estiver mais sendo apertado
                         if( event.button.button == SDL_BUTTON_LEFT )
-                        { 
+                        {
 							SDL_SetRelativeMouseMode(SDL_FALSE);
                         }
                     }
@@ -337,7 +337,7 @@ int main(int argc, char* argv[])
 
                     if (event.type == SDL_QUIT)
                         done = SDL_TRUE;
-					
+
                 }
             }
         }
